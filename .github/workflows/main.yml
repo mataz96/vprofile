@@ -5,7 +5,7 @@ on:
   # 1. تفعيل محفز طلب السحب تجاه فرع main
   pull_request:
     branches:
-      - main
+      - bugfix
 
   # 2. تفعيل زر التشغيل اليدوي في واجهة جيت هاب
   workflow_dispatch: 
