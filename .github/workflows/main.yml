@@ -1,29 +1,19 @@
-name: Build Job
-on: 
-  push:
-    branches: 
+name: vProfile CICD Workflow
+
+# هنا نحدد المحفزات (Triggers)
+on:
+  # 1. تفعيل محفز طلب السحب تجاه فرع main
+  pull_request:
+    branches:
       - main
 
+  # 2. تفعيل زر التشغيل اليدوي في واجهة جيت هاب
+  workflow_dispatch: 
+
 jobs:
-  Build:
+  # هنا تضع الوظائف والخطوات الخاصة بك (مثل بناء الكود أو الفحص)
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Code checkout
-        uses: actions/checkout@v6
-
-      - name: Maven Build
-        run: mvn install
-
-
-  Testing:
-    runs-on: ubuntu-latest
-    needs: Build
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
-
-      - name: Run tests on main branch
-        run: mvn test
-
-      - name: Checkstyle
-        run: mvn checkstyle:checkstyle
+      - name: Code Checkout
+        uses: actions/checkout@v5
