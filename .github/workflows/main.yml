@@ -62,7 +62,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@main
+        uses: aquasecurity/build-security-action@main
         with:
           scan-type: fs
           scan-ref: .
