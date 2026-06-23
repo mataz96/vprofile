@@ -75,7 +75,7 @@ jobs:
           docker rm vprofile-prod || true
 
       - name: Pull latest image from Docker Hub
-        run: docker pull mataz1966/vprofileapp:latest
+        run: docker pull mataz1996/vprofileapp:latest
 
       - name: Run new container on Laptop
-        run: docker run -d -p 8080:8080 --name vprofile-prod mataz1966/vprofileapp:latest
+        run: docker run -d -p 8080:8080 --name vprofile-prod mataz1996/vprofileapp:latest
